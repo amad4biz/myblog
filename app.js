@@ -11,5 +11,10 @@ MyBlog.controller('SimpleCtrl', ['$scope', function($scope){
 		{title:  'Angularjs is notfun', likes:0 } 
 		
 		            ];
+    
+    $scope.addPost = function(){
+        
+        $scope.articles.push({title: $scope.title, likes: $scope.likes} );
+    };
 		
 }]);

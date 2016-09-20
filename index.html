@@ -19,7 +19,24 @@
 	<div class="ui container"  ng-controller="SimpleCtrl">
 	  <!--  show the article from the controller -->
 	
-		<div ng-repeat="myarticle in articles" >         {{  myarticle.title}} has  {{   myarticle.likes}}  likes </div> 
+        <form ng-submit="addPost()">
+             
+            <label> Enter a title text below</label>
+              <input type="text" ng-model="title" class="ui input focus"></input>
+        
+             <label>Enter the number of likes</label>
+        
+             <input type="text" ng-model="likes" class="ui input focus"></input>
+            
+         <button type="submit">Add another</button>
+        
+        </form>
+        
+        
+<div ng-repeat="myarticle in articles | orderBy:'likes' "  class="cf">         {{  myarticle.title}} has  {{   myarticle.likes}}  likes </div> 
+        
+        
+        
 		
 	</div>
   
